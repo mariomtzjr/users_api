@@ -7,10 +7,8 @@ from flask_restful import Api
 from flask_migrate import Migrate
 from flask_marshmallow import Marshmallow
 
-from app.resources import users_blueprint
+from app.resources import users_blueprint, profile_blueprint
 
-
-ma = Marshmallow()
 migrate = Migrate()
 
 
@@ -18,8 +16,12 @@ def create_app(settings_module):
     app = Flask(__name__, template_folder='app/templates/')
     app.config.from_object(settings_module)
     app.register_blueprint(users_blueprint)
+    app.register_blueprint(profile_blueprint)
     
     db = SQLAlchemy(app)
+    
+    # Initialize Marshmallow
+    ma = Marshmallow(app)
 
     with app.app_context():
         db.init_app(app)
