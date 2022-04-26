@@ -1,6 +1,6 @@
-from sqlalchemy import create_engine
+from flask_sqlalchemy import SQLAlchemy
 
 from scripts.seed import get_database_path
+from main import app
 
-
-db = create_engine('sqlite:////{}'.format(get_database_path('github_users.db')))
+db = SQLAlchemy(app)

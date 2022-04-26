@@ -3,13 +3,15 @@ import os
 from flask import Blueprint, render_template, request, current_app
 
 from sqlalchemy.orm import Session, Query
+from sqlalchemy import create_engine
 
 from flask_paginate import Pagination, get_page_args
 
 from app.main.models import User
-from app.main.database import db
+from scripts.seed import get_database_path
 
 users_blueprint = Blueprint('users_blueprint', __name__, template_folder='templates', static_folder='static')
+db = create_engine(f"sqlite:////{get_database_path('github_users.db')}")
 
 @users_blueprint.route('/users/', methods=['GET'])
 @users_blueprint.route('/')
