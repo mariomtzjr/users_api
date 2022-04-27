@@ -11,7 +11,7 @@
         {{ pagination.links }}
         <div class="cards d-flex flex-wrap justify-content-between">
             {% for user in users %}
-            <div class="card col-sm-3 ml-1 mr-1 mt-4">
+            <div class="card col-xs-12 col-sm-4 col-md-3 ml-1 mr-1 mt-4">
                 <p class="text-center">{{ loop.index + pagination.skip }} - {{user.username}}</p>
                 <img class="card-img-top" src="{{ user.avatar_url }}" alt="Card image cap">
                 <div class="card-body">
