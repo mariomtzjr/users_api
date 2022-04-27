@@ -33,9 +33,13 @@ By default, this scripts will be insert 150 users, but currently, the Github Use
 
 ### Set up Flask app
 To start Flask app, we need to do some steps:  
-1. `python3 manage.py db init`  
-2. `python3 manage.py db migrate`
-3. `python3 manage.py db upgrade`
+1. `export export FLASK_APP="main:app"``
+2. `export export FLASK_ENV="development"`
+3. `export APP_SETTINGS_MODULE="config.default.DevelopmentConfig"`
+---
+4. `python3 manage.py db init`  
+5. `python3 manage.py db migrate`
+6. `python3 manage.py db upgrade`
 
 Finally, run:  
 `python3 manage.py runserver`
