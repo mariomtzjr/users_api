@@ -97,5 +97,12 @@ To start Flask app on Docker, run the following command (it's necessay have Dock
 25. Control de paginación funciona correctamente, añado un parámetro __start__ que indica el id a partir del cual comenzará la página siguiente. Aún no logro relacionarlo con el parámetro page.
 25. Filtrado por username y id funciona correctamente si se indican.
 27. Necesito crear una cuenta en Azure, pero requiero un método de pago.
+28. App creada en Azure, deploy exitoso.
+29. Creación de los archivos docker para virtualizar la Flask app.
+30. Después de varias correcciones, la app levanta correctamente.
+31. Cada que se requiere volver a levantar la applicación, es necesario elimitar carpeta de migrations y la base de datos.
+32. Subiendo repositorio a Dockerhub para poder utilizarlo en Azure.
+33. Se necesita crear una instancia de contenedor en Docker. Creando.
+34. Hay un error a la hora de hacer el deploy del contenedor, al parecer no puede acceder a la instancia de DockerHub
 
 

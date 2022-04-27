@@ -1,12 +1,8 @@
 # start by pulling the python image
-FROM python:3.8-alpine
+FROM python:3.9-alpine
 
 ENV PYTHONUNBUFFERED 1
 ENV PYTHONDONTWRITEBYTECODE 1
-ENV FLASK_APP=main:app
-ENV FLASK_ENV=development
-ENV APP_SETTINGS_MODULE=config.default.DevelopmentConfig
-ENV GITHUB_API_URL=$GITHUB_API_URL
 
 RUN mkdir /app
 
