@@ -93,7 +93,10 @@ def create_connection(db_file):
 
 
 if __name__ == '__main__':
-    
+
+    print("FLASK_APP: ", os.getenv('FLASK_APP'))
+    print("FLASK_ENV: ", os.getenv('FLASK_ENV'))
+    print("APP_SETTINGS_MODULE: ", os.getenv('APP_SETTINGS_MODULE'))
     users_number = main()
     conn = create_connection(r"github_users.db")
 

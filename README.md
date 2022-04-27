@@ -2,6 +2,7 @@
 
 ### Requirements
 - Python 3.9
+- Docker
 - Flask
 - Flask Restful
 - Flask SQLAlchemy
@@ -33,8 +34,8 @@ By default, this scripts will be insert 150 users, but currently, the Github Use
 
 ### Set up Flask app
 To start Flask app, we need to do some steps:  
-1. `export export FLASK_APP="main:app"``
-2. `export export FLASK_ENV="development"`
+1. `export FLASK_APP="main:app"``
+2. `export FLASK_ENV="development"`
 3. `export APP_SETTINGS_MODULE="config.default.DevelopmentConfig"`
 ---
 4. `python3 manage.py db init`  
@@ -45,6 +46,12 @@ Finally, run:
 `python3 manage.py runserver`
 
 Server will be running over __http://127.0.0.1:5000__
+
+### Set up Flask app with Docker
+To start Flask app on Docker, run the following command (it's necessay have Docker running):  
+`docker-compose build`  
+`docker-compose --env-file .env up`
+
 
 ### Test the Flask app
 *Endpoints for web*
