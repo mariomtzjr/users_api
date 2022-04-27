@@ -2,6 +2,7 @@
 
 ### Requirements
 - Python 3.9
+- Docker
 - Flask
 - Flask Restful
 - Flask SQLAlchemy
@@ -45,6 +46,12 @@ Finally, run:
 `python3 manage.py runserver`
 
 Server will be running over __http://127.0.0.1:5000__
+
+### Set up Flask app with Docker
+To start Flask app on Docker, run the following command (it's necessay have Docker running):  
+`docker-compose build`  
+`docker-compose --env-file .env up`
+
 
 ### Test the Flask app
 *Endpoints for web*
