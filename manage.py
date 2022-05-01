@@ -8,7 +8,11 @@ from app.main.database import db
 migrate = Migrate(app, db)
 manager = Manager(app)
 
-manager.add_command('db', MigrateCommand)
+try:
+    manager.add_command('db', MigrateCommand)
+except Exception as e:
+    print("Migrations already created: {}".format(e))
+    pass
 
 
 if __name__ == "__main__":
