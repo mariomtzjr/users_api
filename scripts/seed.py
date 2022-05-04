@@ -68,6 +68,7 @@ def create_connection(db_file):
 
     try:
         database_file_path = get_database_path(db_file)
+        print("database_file_path: ", database_file_path)
 
         conn = sqlite3.connect(database_file_path)
         print(f"Connection to {db_file} was successful")

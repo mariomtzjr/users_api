@@ -5,6 +5,7 @@ from main import app
 from app.main.database import db
 
 
+app.app_context().push()
 migrate = Migrate(app, db)
 manager = Manager(app)
 
@@ -15,5 +16,10 @@ except Exception as e:
     pass
 
 
-if __name__ == "__main__":
+@manager.command
+def run():
+    app.run(host="0.0.0.0", port=8000)
+
+
+if __name__ == '__main__':
     manager.run()
